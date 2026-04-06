@@ -1,10 +1,10 @@
 from eth_utils.crypto import keccak
 
-from vbd_indexer.b3tr.b3tr_contracts import B3TR_CONTRACTS
-from vbd_indexer.b3tr.b3tr_event_decoders import decode_reward_event
-from vbd_indexer.b3tr.b3tr_event_transformers import transform_reward_event
-from vbd_indexer.b3tr.b3tr_models import B3TRRewardDecodedEvent, B3TRRewardEvent
-from vbd_indexer.indexer.contract_event import ContractEvent
+from vbs_analytics.b3tr.b3tr_contracts import B3TR_CONTRACTS
+from vbs_analytics.b3tr.b3tr_event_decoders import decode_reward_event
+from vbs_analytics.b3tr.b3tr_event_transformers import transform_reward_event
+from vbs_analytics.b3tr.b3tr_models import B3TRRewardDecodedEvent, B3TRRewardEvent
+from vbs_analytics.indexer.contract_event import ContractEvent
 
 # -------------------------
 # Contract event definitions

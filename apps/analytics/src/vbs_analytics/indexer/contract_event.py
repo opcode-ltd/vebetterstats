@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Callable, Generic, TypeVar
 
-from vbd_indexer.thor.raw_event import RawEvent
+from vbs_analytics.thor.raw_event import RawEvent
 
 from .decoded_event import DecodedEvent
 from .transformed_event import TransformedEvent

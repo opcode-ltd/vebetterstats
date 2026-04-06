@@ -4,7 +4,7 @@ from typing import Dict
 
 from loguru import logger
 
-from vbd_indexer.b3tr.b3tr_impact_names import B3TR_IMPACT_NAMES
+from vbs_analytics.b3tr.b3tr_impact_names import B3TR_IMPACT_NAMES
 
 
 def parse_reward_proof(raw_proof: str) -> Dict[str, Decimal]:

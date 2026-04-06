@@ -1,8 +1,8 @@
 from eth_abi.abi import decode
 from eth_utils.address import to_checksum_address
 
-from vbd_indexer.b3tr.b3tr_models import B3TRRewardDecodedEvent
-from vbd_indexer.thor.raw_event import RawEvent
+from vbs_analytics.b3tr.b3tr_models import B3TRRewardDecodedEvent
+from vbs_analytics.thor.raw_event import RawEvent
 
 
 def decode_reward_event(raw_event: RawEvent) -> B3TRRewardDecodedEvent:

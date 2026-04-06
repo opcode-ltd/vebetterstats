@@ -1,9 +1,9 @@
 from loguru import logger
 
-from vbd_indexer.b3tr.b3tr_apps import get_app_name
-from vbd_indexer.b3tr.b3tr_models import B3TRRewardDecodedEvent, B3TRRewardEvent
-from vbd_indexer.b3tr.b3tr_proof_parser import parse_reward_proof
-from vbd_indexer.utils.units import format_wei
+from vbs_analytics.b3tr.b3tr_apps import get_app_name
+from vbs_analytics.b3tr.b3tr_models import B3TRRewardDecodedEvent, B3TRRewardEvent
+from vbs_analytics.b3tr.b3tr_proof_parser import parse_reward_proof
+from vbs_analytics.utils.units import format_wei
 
 
 def transform_reward_event(raw_event: B3TRRewardDecodedEvent) -> B3TRRewardEvent | None:

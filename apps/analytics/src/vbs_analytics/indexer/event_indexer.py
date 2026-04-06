@@ -6,22 +6,18 @@ from typing import Generic, List, Optional, Tuple, TypeVar
 import pandas as pd
 from loguru import logger
 
-from vbd_indexer.b3tr.b3tr_round import get_block_range_for_round
-from vbd_indexer.thor.thor_client import ThorClient
-from vbd_indexer.thor.thor_client_options import ThorClientOptions
+from vbs_analytics.b3tr.b3tr_round import get_block_range_for_round
+from vbs_analytics.thor.thor_client import ThorClient
+from vbs_analytics.thor.thor_client_options import ThorClientOptions
 
-from .decoded_event import DecodedEvent
+from .contract_event import EDecoded, ETransformed
 from .indexer_options import IndexerOptions
 from .indexer_status import IndexerStatus
 from .indexer_task import IndexerTask
-from .transformed_event import TransformedEvent
 
 # -----------------------------
 # Indexer
 # -----------------------------
-
-EDecoded = TypeVar("EDecoded", bound=DecodedEvent)
-ETransformed = TypeVar("ETransformed", bound=TransformedEvent)
 
 
 class EventIndexer(Generic[EDecoded, ETransformed]):

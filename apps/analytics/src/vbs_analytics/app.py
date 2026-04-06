@@ -1,13 +1,13 @@
 import fire
 from loguru import logger
 
-from vbd_indexer.analysis.reward_analyser import get_rewards_summary
-from vbd_indexer.b3tr.b3tr_apps import warm_app_name_cache
-from vbd_indexer.b3tr.b3tr_events_defs import B3TR_REWARD_DEFINITION
-from vbd_indexer.b3tr.b3tr_models import B3TRRewardDecodedEvent, B3TRRewardEvent
-from vbd_indexer.config.app_config import THOR_ENDPOINTS
-from vbd_indexer.indexer.event_indexer import EventIndexer
-from vbd_indexer.indexer.indexer_options import IndexerOptions
+from vbs_analytics.analysis.reward_analyser import get_rewards_summary
+from vbs_analytics.b3tr.b3tr_apps import warm_app_name_cache
+from vbs_analytics.b3tr.b3tr_events_defs import B3TR_REWARD_DEFINITION
+from vbs_analytics.b3tr.b3tr_models import B3TRRewardDecodedEvent, B3TRRewardEvent
+from vbs_analytics.config.app_config import THOR_ENDPOINTS
+from vbs_analytics.indexer.event_indexer import EventIndexer
+from vbs_analytics.indexer.indexer_options import IndexerOptions
 
 # -----------------------------
 # Logo printer
@@ -16,17 +16,19 @@ from vbd_indexer.indexer.indexer_options import IndexerOptions
 
 def print_logo() -> None:
     print("""
-        ▗▖  ▗▖▗▄▄▖ ▗▄▄▄     ▗▄▄▄▖▗▖  ▗▖▗▄▄▄ ▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖▗▄▄▖
-        ▐▌  ▐▌▐▌ ▐▌▐▌  █      █  ▐▛▚▖▐▌▐▌  █▐▌    ▝▚▞▘ ▐▌   ▐▌ ▐▌
-        ▐▌  ▐▌▐▛▀▚▖▐▌  █      █  ▐▌ ▝▜▌▐▌  █▐▛▀▀▘  ▐▌  ▐▛▀▀▘▐▛▀▚▖
-         ▝▚▞▘ ▐▙▄▞▘▐▙▄▄▀    ▗▄█▄▖▐▌  ▐▌▐▙▄▄▀▐▙▄▄▖▗▞▘▝▚▖▐▙▄▄▖▐▌ ▐▌
-
-
+        █████   █████          ███████████            █████     █████                        █████████   █████               █████
+       ░░███   ░░███          ░░███░░░░░███          ░░███     ░░███                        ███░░░░░███ ░░███               ░░███
+        ░███    ░███   ██████  ░███    ░███  ██████  ███████   ███████    ██████  ████████ ░███    ░░░  ███████    ██████   ███████    █████
+        ░███    ░███  ███░░███ ░██████████  ███░░███░░░███░   ░░░███░    ███░░███░░███░░███░░█████████ ░░░███░    ░░░░░███ ░░░███░    ███░░
+        ░░███   ███  ░███████  ░███░░░░░███░███████   ░███      ░███    ░███████  ░███ ░░░  ░░░░░░░░███  ░███      ███████   ░███    ░░█████
+         ░░░█████░   ░███░░░   ░███    ░███░███░░░    ░███ ███  ░███ ███░███░░░   ░███      ███    ░███  ░███ ███ ███░░███   ░███ ███ ░░░░███
+           ░░███     ░░██████  ███████████ ░░██████   ░░█████   ░░█████ ░░██████  █████    ░░█████████   ░░█████ ░░████████  ░░█████  ██████
+            ░░░       ░░░░░░  ░░░░░░░░░░░   ░░░░░░     ░░░░░     ░░░░░   ░░░░░░  ░░░░░      ░░░░░░░░░     ░░░░░   ░░░░░░░░    ░░░░░  ░░░░░░
         """)
 
 
 # -----------------------------
-# EXTRACT ROUND DATA
+# EXTRACT DATA
 # -----------------------------
 
 
@@ -88,10 +90,10 @@ def _summarize_rewards(round_id: int) -> None:
     logger.info(f"Analysis saved to file: {file_name}")
 
 
-def summarize(round_id: int) -> None:
+def analyse(round_id: int) -> None:
     """
     Analyses extracted round data CSV file
-    Produces a json file of statistics
+    Produces json files of statistics
     """
     if round_id < 1:
         logger.error("round_id has to be >= 1")
@@ -106,7 +108,7 @@ def summarize(round_id: int) -> None:
 
 def main() -> None:
     print_logo()
-    fire.Fire({"extract": extract, "summarize": summarize})
+    fire.Fire({"extract": extract, "analyse": analyse})
 
 
 if __name__ == "__main__":

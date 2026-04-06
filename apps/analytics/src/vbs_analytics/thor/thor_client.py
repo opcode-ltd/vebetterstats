@@ -3,8 +3,8 @@ from typing import List, Optional
 
 import httpx
 
-from vbd_indexer.thor.raw_event import RawEvent
-from vbd_indexer.thor.thor_client_options import ThorClientOptions
+from vbs_analytics.thor.raw_event import RawEvent
+from vbs_analytics.thor.thor_client_options import ThorClientOptions
 
 
 class ThorClient:

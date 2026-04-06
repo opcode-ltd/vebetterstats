@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from decimal import Decimal
 from typing import Dict
 
-from vbd_indexer.indexer.decoded_event import DecodedEvent
-from vbd_indexer.indexer.transformed_event import TransformedEvent
+from vbs_analytics.indexer.decoded_event import DecodedEvent
+from vbs_analytics.indexer.transformed_event import TransformedEvent
 
 # ---------------------------
 # Indexed Event objects

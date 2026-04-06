@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import Callable, Generic, List, TypeVar
 
-from vbd_indexer.indexer.decoded_event import DecodedEvent
-from vbd_indexer.indexer.transformed_event import TransformedEvent
-from vbd_indexer.thor.raw_event import RawEvent
+from vbs_analytics.indexer.decoded_event import DecodedEvent
+from vbs_analytics.indexer.transformed_event import TransformedEvent
+from vbs_analytics.thor.raw_event import RawEvent
 
 EDecoded = TypeVar("EDecoded", bound=DecodedEvent)
 ETransformed = TypeVar("ETransformed", bound=TransformedEvent)
