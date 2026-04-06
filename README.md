@@ -1,2 +1,3 @@
-# vebetterstats
-VeBetterStats app
+# VeBetterStats
+
+The VeBetterStats app
