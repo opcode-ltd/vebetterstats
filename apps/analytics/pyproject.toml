@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "vbs-analytics"
+version = "0.1.0"
+description = "VBS Analytics"
+authors = ["OpcodeLtd <github@opcodeltd.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "vbs_analytics", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+httpx = "^0.28.1"
+eth-abi = "^5.2.0"
+eth-utils = "^5.3.1"
+pycryptodome = "^3.23.0"
+pandas = "^3.0.0"
+pyarrow = "^23.0.0"
+loguru = "^0.7.3"
+fire = "^0.7.1"
+
+[tool.poetry.scripts]
+vbs-analytics = "vbs_analytics.app:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
